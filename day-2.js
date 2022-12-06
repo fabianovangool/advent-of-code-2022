@@ -1,4 +1,4 @@
-const input = `B Z
+const dayTwoInput = `B Z
 B Z
 B Y
 C Y
@@ -2501,7 +2501,7 @@ C Y`;
 
 // part 1
 function calculateAmount (matchResult, score) {
-	return input.split(/\n/).filter((match) => match === matchResult).length * score;
+	return dayTwoInput.split(/\n/).filter((match) => match === matchResult).length * score;
 }
 const answerPartOne = calculateAmount("A X", 4) + calculateAmount("A Y", 8) + calculateAmount("A Z", 3) + calculateAmount("B X", 1) + calculateAmount("B Y", 5) + calculateAmount("B Z", 9) + calculateAmount("C X", 7) + calculateAmount("C Y", 2) + calculateAmount("C Z", 6);
 
