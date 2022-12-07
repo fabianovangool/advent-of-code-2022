@@ -513,7 +513,7 @@ move 2 from 4 to 3
 move 1 from 5 to 8`;
 
 // part 1 & 2
-const parsedContainers = dayFiveInput.split(/\n/).slice(1, 10).map((line) => line.split('').filter((_, index) => (index - 1) % 4 === 0).map((char) => char.split(","))).reverse().reduce((acc, curr) => {
+const parsedContainers = dayFiveInput.split(/\n/).slice(1, 10).map((line) => line.split('').filter((_, index) => (index - 1) % 4 === 0)).reverse().reduce((acc, curr) => {
 return [...acc.map((element, index) => element.concat(curr[index]))]
 }, Array(9).fill([], 0)).map((line) => line.filter(element => element !== " "));
 
@@ -539,5 +539,6 @@ const executeAllInstructions = (part) => {
 	return containers.map((container) => container[container.length - 1]).toString().replaceAll(",", "");
 }
 
+// only one at a time works
 const answerPartOne = executeAllInstructions("one");
-const answerPartTwo = executeAllInstructions("two");
+const answerPartTwo = executeAllInstructions("two"); 
